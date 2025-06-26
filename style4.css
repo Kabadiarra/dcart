@@ -1,0 +1,1288 @@
+/* Définir les polices personnalisées */
+@font-face {
+    font-family: 'INGAME';
+    src: url('pol/INGAME.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Robot-Rebels';
+    src: url('pol/Robot-Rebels.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('pol/Roboto-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Boul';
+    src: url('pol/Boul.otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PlayfairDisplaySC-Bold';
+    src: url('pol/PlayfairDisplaySC-Bold.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Sobatyan-Regular';
+    src: url('pol/Sobatyan-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Roboto-MediumItalic';
+    src: url('pol/Roboto-MediumItalic.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'MilestoneBrush';
+    src: url('pol/MilestoneBrush.otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Rostack';
+    src: url('pol/Rostack.otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Roboto-Black';
+    src: url('pol/Roboto-Black.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Matemasie-Regular';
+    src: url('pol/Matemasie-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'NewAmsterdam-Regular';
+    src: url('pol/NewAmsterdam-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'NerkoOne-Regular';
+    src: url('pol/NerkoOne-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url('pol/Roboto-Bold.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'DMSerifText-Regular';
+    src: url('pol/DMSerifText-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Styles de base pour le corps de la page */
+body {
+    font-family: Arial, sans-serif; /* Police de caractères par défaut */
+    margin: 0; /* Supprime la marge par défaut */
+    padding: 0; /* Supprime le padding par défaut */
+    background-color: #f4f4f4; /* Couleur de fond */
+    background: url('images/p02.jpg') no-repeat center center; /* Image de fond */
+    background-size: cover; /* L'image couvre entièrement */
+}
+
+/* Conteneur du sélecteur de langue */
+#languageSelector {
+    display: flex; /* Utilise Flexbox pour aligner les éléments horizontalement */
+    align-items: center; /* Centre verticalement les éléments (select et images) */
+    gap: 10px; /* Ajoute un espace de 10px entre chaque élément */
+}
+
+/* Style du menu déroulant de sélection de langue */
+#languageSwitcher {
+    padding: 5px; /* Ajoute un espace intérieur de 5px pour un meilleur rendu */
+}
+
+/* Style des drapeaux */
+#languageSelector img {
+    width: 24px; /* Définit la largeur des images des drapeaux à 24px */
+    height: 16px; /* Définit la hauteur des images des drapeaux à 16px */
+    cursor: pointer; /* Change le curseur en main pour indiquer que c'est cliquable */
+}
+
+
+/* Container for the search bar and suggestions */
+.search-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+/* Search input field styling */
+#search-input {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 24px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+#search-input:focus {
+    border-color: #007bff;
+}
+
+/* Search button styling */
+#search-button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    padding: 0 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+#search-button img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Suggestions dropdown styling */
+.suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 24px 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none; /* Hidden by default */
+}
+
+/* Individual suggestion item styling */
+.suggestion-item {
+    display: block;
+    padding: 12px 20px;
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
+.suggestion-item:active {
+    background-color: #e0e0e0;
+}
+
+/* Hide suggestions container when empty */
+.suggestions:empty {
+    display: none;
+}
+.suggestion-item.highlighted {
+    background-color: #f0f0f0; /* Couleur de surbrillance */
+    color: #333; /* Couleur du texte */
+}
+
+/* Mode sombre */
+.dark-mode {
+    background-color: #121212; /* Définit la couleur de fond générale pour le mode sombre en gris très foncé */
+    color: #ffffff; /* Définit la couleur du texte principal en blanc pour un meilleur contraste */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('logo/g2.png') no-repeat center center; 
+    /* Ajoute un dégradé sombre semi-transparent superposé sur une image d'arrière-plan pour améliorer la lisibilité */
+    background-size: cover; /* Assure que l'image d'arrière-plan couvre toute la zone */
+}
+
+/* Styles pour les titres et liens en mode sombre */
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6,
+.dark-mode p,
+.dark-mode a {
+    color: #ffffff !important; /* Définit la couleur de tous les titres, paragraphes et liens en blanc pour les rendre lisibles sur le fond sombre */
+}
+
+/* Styles pour les cartes en mode sombre */
+.dark-mode .card {
+    background-color: #333; /* Fond des cartes en gris foncé */
+    color: #ffffff; /* Texte des cartes en blanc */
+    border: 1px solid #444; /* Bordure pour démarquer les cartes */
+}
+/* Styles pour les cartes en mode sombre */
+.dark-mode .product-card {
+    background-color: #333; /* Fond des cartes en gris foncé */
+    color: #ffffff; /* Texte des cartes en blanc */
+    border: 1px solid #444; /* Bordure pour démarquer les cartes */
+}
+/* Boutons des cartes en mode sombre */
+.dark-mode .btn6 {
+    background-color: #555; /* Fond du bouton */
+    color: #ffffff; /* Couleur du texte du bouton */
+    border: none; /* Retire les bordures par défaut */
+    padding: 10px 20px; /* Ajuste l'espacement intérieur */
+    border-radius: 5px; /* Ajoute des coins arrondis */
+}
+
+.dark-mode .btn6:hover {
+    background-color: #777; /* Change le fond au survol */
+    color: #ffcc00; /* Texte jaune vif pour attirer l'attention */
+}
+/* Style pour le bouton */
+#dark-mode-toggle {
+    position: fixed; /* Positionne le bouton de manière fixe pour qu'il reste visible lors du défilement */
+    top: 10px; /* Distance de 10 pixels depuis le haut de la page */
+    right: 10px; /* Distance de 10 pixels depuis la droite de la page */
+    padding: 10px; /* Ajoute un espace intérieur de 10 pixels autour du texte du bouton */
+    background-color: #333; /* Définit la couleur de fond du bouton en gris foncé */
+    color: #ffffff; /* Définit la couleur du texte du bouton en blanc */
+    border: none; /* Supprime la bordure par défaut du bouton */
+    border-radius: 5px; /* Arrondit les coins du bouton pour un style plus doux */
+    cursor: pointer; /* Change le curseur en pointeur pour indiquer que le bouton est cliquable */
+}
+
+/* Style du bouton en mode sombre */
+.dark-mode #dark-mode-toggle {
+    background-color: #ffffff; /* Change le fond du bouton en blanc en mode sombre */
+    color: #333; /* Change la couleur du texte du bouton en gris foncé pour contraste avec le fond blanc */
+}
+
+/* Styles pour le fond flou */
+.blur-background {
+    background: rgba(255, 255, 255, 0.8); /* Crée un fond blanc semi-transparent pour un effet de flou */
+    backdrop-filter: blur(10px); /* Applique un effet de flou de 10 pixels à l'arrière-plan */
+    padding: 20px; /* Ajoute un espacement interne de 20 pixels autour du contenu */
+}
+
+/* Styles pour les suggestions en mode sombre */
+.dark-mode #suggestions {
+    background-color: #333; /* Définit la couleur de fond de la boîte de suggestions en gris foncé */
+    color: #ffffff; /* Définit la couleur du texte de la suggestion en blanc */
+    border: 1px solid #444; /* Ajoute une bordure gris foncé pour séparer la boîte de suggestions du reste du contenu */
+}
+
+.dark-mode .suggestion-item {
+    color: #e0e0e0; /* Définit la couleur des éléments de suggestion en gris clair pour les rendre plus visibles */
+    font-weight: bold; /* Rend le texte en gras pour une meilleure visibilité */
+}
+
+.dark-mode .suggestion-item:hover {
+    background-color: #555; /* Change le fond des éléments de suggestion en gris moyen au survol */
+    color: #ffcc00; /* Change la couleur du texte en jaune vif au survol pour le rendre bien visible */
+}
+
+/* Styles pour le fond flou */
+.blur-background {
+    background: rgba(255, 255, 255, 0.8); /* Blanc avec transparence */
+    backdrop-filter: blur(10px); /* Appliquer l'effet de flou */
+    padding: 20px; /* Ajout de l'espacement autour du contenu */
+}
+
+/* Styles généraux pour la fenêtre */
+#consent-popup {
+    display: flex; /* Utilise flexbox pour aligner les éléments à l'intérieur. */
+    position: fixed; /* Place la fenêtre en position fixe pour qu'elle reste visible même en faisant défiler la page. */
+    top: 0; /* Positionne la fenêtre en haut de l'écran. */
+    left: 0; /* Positionne la fenêtre à gauche de l'écran. */
+    width: 100%; /* Prend toute la largeur de l'écran. */
+    height: 100%; /* Prend toute la hauteur de l'écran. */
+    background-color: rgba(0, 0, 0, 0.5); /* Ajoute un fond semi-transparent noir pour faire ressortir la fenêtre. */
+    justify-content: center; /* Centre la fenêtre horizontalement. */
+    align-items: center; /* Centre la fenêtre verticalement. */
+}
+
+.consent-content {
+    color: #333; /* Utilise une couleur sombre pour le texte, comme un gris foncé */
+    background-color: white; /* Le fond de la fenêtre est blanc. */
+    padding: 20px; /* Ajoute un espacement interne de 20px. */
+    text-align: center; /* Centre le texte à l'intérieur. */
+    border-radius: 8px; /* Arrondit les coins de la fenêtre. */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Ajoute une ombre autour de la fenêtre pour un effet de profondeur. */
+    max-width: 400px; /* Limite la largeur de la fenêtre à 400px pour qu'elle ne devienne pas trop large. */
+}
+
+.button-container {
+    margin-top: 20px; /* Ajoute un espace au-dessus des boutons. */
+    display: flex; /* Utilise flexbox pour organiser les boutons. */
+    gap: 10px; /* Espace de 10px entre les boutons. */
+    justify-content: center; /* Centre les boutons horizontalement. */
+}
+
+#share-section {
+    text-align: center; /* Centre le contenu du conteneur. */
+    margin: 20px 0; /* Applique une marge de 20px en haut et en bas du conteneur. */
+}
+
+#share-button {
+    background-color: #007bff; /* Définit une couleur de fond bleue pour le bouton. */
+    color: white; /* Change la couleur du texte à blanc pour un bon contraste. */
+    border: none; /* Retire les bordures du bouton. */
+    border-radius: 5px; /* Arrondit légèrement les coins du bouton avec un rayon de 5px. */
+    padding: 10px 20px; /* Ajoute du padding de 10px en haut et en bas, et 20px à gauche et à droite pour un bouton plus large. */
+    font-size: 16px; /* Définit la taille de la police à 16px. */
+    cursor: pointer; /* Change le curseur en forme de main lorsque l'on survole le bouton. */
+    transition: background-color 0.3s; /* Ajoute une transition fluide de 0.3 seconde pour la couleur de fond. */
+}
+
+#share-button:hover {
+    background-color: #0056b3; /* Change la couleur de fond en bleu plus foncé lors du survol. */
+}
+
+.whatsapp-button {
+    display: inline-flex; /* Utilise un conteneur flex en ligne pour aligner les éléments (icône). */
+    align-items: center; /* Centre l'icône verticalement à l'intérieur du bouton. */
+    background-color: #25d366; /* Applique la couleur verte typique de WhatsApp en fond. */
+    border-radius: 50%; /* Rend le bouton circulaire avec un rayon de bordure de 50%. */
+    padding: 10px; /* Ajoute du padding de 10px autour de l'icône. */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajoute une ombre portée légère autour du bouton pour un effet de profondeur. */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transition fluide pour la couleur de fond et l'agrandissement du bouton lors de l'interaction. */
+    text-decoration: none; /* Retire toute décoration de texte (comme les soulignements) du lien. */
+}
+
+.whatsapp-button:hover {
+    background-color: #128c7e; /* Change la couleur du bouton en vert plus foncé lors du survol. */
+    transform: scale(1.1); /* Agrandit légèrement le bouton de 10% lors du survol. */
+}
+
+.whatsapp-button img {
+    width: 40px; /* Définit la largeur de l'icône à 40px pour qu'elle soit bien visible. */
+    height: 40px; /* Définit la hauteur de l'icône à 40px pour garder une forme carrée. */
+    object-fit: cover; /* Assure que l'image couvre entièrement l'espace disponible sans déformation. */
+}
+
+@media all and (max-width: 1024px) {
+    /* Applique ces styles uniquement pour les écrans de moins de 1024px (tablettes et petits écrans). */
+    .whatsapp-button {
+        padding: 8px; /* Réduit le padding à 8px pour économiser de l'espace sur les petits écrans. */
+    }
+
+    .whatsapp-button img {
+        width: 35px; /* Réduit la taille de l'icône à 35px pour une meilleure adaptation sur les petits écrans. */
+        height: 35px; /* Réduit la hauteur de l'icône à 35px pour la même raison. */
+    }
+}
+
+
+
+/* Style pour les boutons */
+.btn {
+    padding: 10px 20px; /* Ajoute un espacement interne (10px vertical, 20px horizontal). */
+    font-size: 16px; /* Définit la taille de la police à 16px. */
+    cursor: pointer; /* Change le curseur en une main survolant le bouton. */
+    border: none; /* Enlève la bordure par défaut. */
+    border-radius: 4px; /* Arrondit légèrement les coins du bouton. */
+    font-family: Arial, sans-serif; /* Définit la police pour les boutons. */
+    transition: background-color 0.2s; /* Ajoute une transition fluide de 0,2s sur la couleur de fond. */
+}
+
+/* En-tête du site */
+header {
+    background: url('images/p4.jpg') no-repeat center center; /* Image de fond */
+    background-size: cover; /* L'image couvre entièrement */
+    color: white; /* Couleur du texte */
+    padding: 10px 0; /* Espacement vertical */
+    text-align: center; /* Centre le texte */
+}
+header h1 {
+    font-size: 80px; /* Taille du texte sur les grands écrans */
+    font-family: 'PlayfairDisplaySC-Bold','Roboto-Black', 'Roboto-Rebels', Arial, sans-serif; /* Police principale */
+    color: #FFFFFF; /* Couleur du texte */
+    text-align: center; /* Centrer le texte */
+    letter-spacing: 2px; /* Espacement entre les lettres */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Ombre légère */
+}
+
+
+/* Style des boutons fléchés */
+.scroll-button {
+    position: fixed; /* Positionne le bouton de manière fixe par rapport à la fenêtre d'affichage, donc il reste en place lorsqu'on fait défiler la page. */
+    right: 20px; /* Distance du côté droit de la fenêtre d'affichage, positionne le bouton à 20 pixels du bord droit. */
+    background-color: rgb(153,217,234); /* Couleur de fond du bouton (bleu). Tu peux changer cette couleur selon tes préférences. */
+    color: white; /* Couleur du texte à l'intérieur du bouton (blanc). */
+    border: none; /* Supprime les bordures par défaut du bouton pour un aspect plus propre. */
+    padding: 10px; /* Espace autour du texte à l'intérieur du bouton, augmentant la taille du bouton. */
+    border-radius: 20%; /* Rend les coins du bouton arrondis et le transforme en cercle. */
+    cursor: pointer; /* Change le curseur en une main lorsqu'il survole le bouton, indiquant qu'il est cliquable. */
+    font-size: 24px; /* Taille du texte à l'intérieur du bouton. Ajuste cette taille pour améliorer la lisibilité. */
+    z-index: 1000; /* Définit la priorité d'affichage du bouton pour qu'il soit au-dessus des autres éléments de la page. */
+    display: none; /* Caché par défaut. Les boutons seront affichés dynamiquement en fonction du défilement de la page. */
+}
+
+/* Positionne le bouton pour défiler vers le haut */
+#scrollUp {
+    bottom: 80%; /* Positionne le bouton à 20% de la hauteur de la fenêtre d'affichage, ce qui le place au centre verticalement. */
+    transform: translateY(20%); /* Décale le bouton vers le bas de 50% de sa propre hauteur pour qu'il soit parfaitement centré verticalement. */
+}
+
+/* Positionne le bouton pour défiler vers le bas */
+#scrollDown {
+    bottom: 20%; /* Positionne le bouton à 20% de la hauteur de la fenêtre d'affichage, ce qui le place au centre verticalement. */
+    transform: translateY(-20%); /* Décale le bouton vers le haut de 20% de sa propre hauteur pour qu'il soit parfaitement centré verticalement. */
+}
+
+/* Animation de survol */
+.scroll-button:hover {
+    background-color: rgb(16,64,75) /* Couleur de fond du bouton lorsqu'il est survolé (bleu plus foncé) pour donner un effet de survol. */
+}
+
+
+/* Navigation principale */
+/* Styles pour la barre de navigation */
+nav {
+    background: url('images/p4.jpg') no-repeat center center; /* Image de fond */
+    background-size: cover; /* L'image couvre entièrement */
+    padding: 0 1rem; /* Padding pour le contenu de la barre de navigation */
+}
+
+nav ul {
+    font-family: 'Roboto-Black', 'Roboto-Rebels', Arial, sans-serif; /* Police principale */
+    list-style-type: none; /* Supprime les puces des listes */
+    margin: 0; /* Supprime la marge par défaut */
+    padding: 0; /* Supprime le padding par défaut */
+    display: flex; /* Utilise Flexbox pour l'agencement horizontal */
+    justify-content: center; /* Centre les éléments horizontalement */
+    position: relative; /* Nécessaire pour le positionnement des éléments enfants */
+}
+
+nav ul li {
+    margin: 0 1rem; /* Marge horizontale entre les éléments */
+    position: relative; /* Position relative pour le menu déroulant */
+}
+
+/* Styles pour les liens du menu principal */
+nav ul li a {
+    color: #fff; /* Couleur du texte */
+    text-decoration: none; /* Pas de soulignement */
+    display: block; /* Prend toute la largeur de l'élément parent */
+    padding: 15px 20px; /* Espacement interne */
+    font-weight: bold; /* Texte en gras */
+    border-radius: 5px; /* Arrondit les coins */
+    background-color: rgb(52,94,143); /* Fond bleu foncé */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transition douce */
+}
+
+/* Changement de couleur au survol du lien */
+nav ul li a:hover {
+    background-color: rgb(118,12,31); /* Fond au survol */
+}
+
+/* Styles pour le sous-menu */
+nav ul li ul {
+    display: none; /* Masquer le sous-menu par défaut */
+    position: absolute; /* Positionnement absolu */
+    left: 0; /* Aligner à gauche de l'élément parent */
+    top: 100%; /* Aligner en dessous de l'élément parent */
+    background: #003366; /* Fond du sous-menu */
+    min-width: 300px; /* Largeur minimale du sous-menu */
+    list-style-type: none; /* Supprimer les puces */
+    padding: 0; /* Supprimer le padding */
+    margin: 0; /* Supprimer la marge */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour le sous-menu */
+    z-index: 1000; /* Assure que le sous-menu est au-dessus des autres éléments */
+}
+
+/* Styles pour les éléments du sous-menu */
+nav ul li ul li {
+    margin: 0; /* Pas de marge entre les éléments du sous-menu */
+}
+
+/* Styles pour les liens du sous-menu */
+nav ul li ul li a {
+    padding: 10px 20px; /* Espacement interne du sous-menu */
+    color: #fff; /* Couleur du texte du sous-menu */
+}
+
+/* Changement de couleur au survol du lien du sous-menu */
+nav ul li ul li a:hover {
+    background-color: rgb(118,12,31); /* Fond du sous-menu au survol */
+}
+
+/* Afficher le sous-menu au survol de l'élément parent */
+nav ul li:hover > ul {
+    display: block; /* Afficher le sous-menu */
+}
+
+
+
+.animated {
+    animation: fadeIn 1s ease-in;
+}
+
+
+/* Styles pour le menu déroulant */
+.dropdown-content {
+    display: none; /* Cache le menu déroulant par défaut */
+    position: absolute; /* Positionne le menu déroulant par rapport à l'élément parent */
+    background-color: #333; /* Couleur de fond du menu déroulant */
+    min-width: 200px; /* Largeur minimale du menu déroulant */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Ombre */
+    z-index: 1; /* Assure que le menu déroulant est au-dessus des autres éléments */
+    top: 100%; /* Positionne le menu déroulant directement sous l'élément parent */
+    left: 0; /* Aligne le menu déroulant avec le côté gauche de l'élément parent */
+    opacity: 0; /* Initialement invisible */
+     visibility: hidden; /* Cacher par défaut */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Effet de transition pour l'apparition/disparition */
+}
+
+.dropdown-content li {
+    width: 100%; /* Les éléments de la liste prennent toute la largeur du menu */
+}
+
+.dropdown-content li a {
+    padding: 12px 16px; /* Espacement interne des éléments du menu déroulant */
+    color: white; /* Couleur du texte des éléments du menu déroulant */
+    text-decoration: none; /* Supprime le soulignement du texte */
+}
+
+.dropdown-content li a:hover {
+    background-color: #575757; /* Fond au survol des éléments du menu */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Affiche le menu déroulant */
+    opacity: 1; /* Rends le menu déroulant visible */
+    visibility: visible; /* Afficher lors du survol */
+}
+
+/* Grille pour organiser les cartes */
+.grid {
+    display: grid; /* Définit la grille */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Grille réactive avec des colonnes minimales de 250px */
+    gap: 1rem; /* Espace entre les éléments */
+}
+/* Style des cartes */
+.card:hover {
+    transform: scale(1.05); /* Agrandit légèrement la carte au survol */
+    transition: transform 0.3s ease;
+}
+.card {
+    background: #ffffff; /* Fond blanc pour les cartes */
+    border-radius: 8px; /* Arrondit les coins des cartes */
+    padding: 1.5rem; /* Ajoute un padding interne */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ajoute une ombre subtile */
+    text-align: left; /* Aligne le texte à gauche */
+}
+
+/* Styles généraux pour les images */
+.image-propos {
+    width: 100%; /* Prend toute la largeur disponible */
+    height: 200px; /* Fixe la hauteur à 200px */
+    object-fit: cover; /* Adapte l'image pour couvrir tout le conteneur sans déformer */
+    border-radius: 8px; /* Arrondit les coins */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajoute une ombre subtile */
+}
+
+/* Styles pour le conteneur */
+.grid1, .grid2 {
+    display: flex;
+    align-items: center; /* Aligne les éléments au centre */
+    justify-content: space-between; /* Espace égal entre les éléments */
+    gap: 20px; /* Espace entre les éléments */
+}
+
+.c1, .c2 {
+    flex: 1; /* Les textes prennent autant de place que possible */
+    padding: 20px; /* Espace autour du texte */
+}
+
+.c11, .c21 {
+    flex: 1; /* Les images prennent également autant de place que possible */
+    max-width: 400px; /* Limite la largeur des images */
+}
+
+.dev {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch; /* pour les appareils mobiles */
+    scroll-snap-type: x mandatory; /* pour un défilement fluide */
+}
+
+.pjotodev {
+    margin: 2px;
+    border-radius: 5px;
+    scroll-snap-align: center; /* pour centrer les éléments */
+    flex: 0 0 auto; /* pour éviter que les éléments ne soient compressés */
+}
+.loi {
+    font-family: 'Roboto-Regular',Arial, sans-serif; /* Police de caractères par défaut */
+    font-size: 20px;
+    color: red;
+}
+/* Pied de page */
+footer {
+    background: url('images/p2.jpg') no-repeat center center; /* Image de fond */
+    background-size: cover; /* L'image couvre entièrement */
+    color: white; /* Couleur du texte */
+    padding: 10px 0; /* Espacement vertical */
+    text-align: center; /* Centre le texte */
+}
+
+/* Animation (à personnaliser en fonction de votre contenu) */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.animated {
+    animation: slideIn 0.5s ease-out;
+}
+/* Styles pour les sections */
+.section {
+    position: relative; /* Permet de positionner l'image de fond via pseudo-élément */
+    margin: 0 auto 2rem; /* Centre la section horizontalement et ajoute une marge inférieure de 2rem */
+    background-color: rgba(211, 211, 211, 0.); /* Gris clair avec 50% de transparence */
+    padding: 1rem; /* Ajoute un padding interne de 1rem */
+    font-family: 'Roboto-Regular',Arial, sans-serif; /* Police neutre */
+    color: #333; /* Couleur de texte gris foncé */
+    /*box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Ajoute une petite ombre autour de la section */
+    max-width: 1200px; /* Définit une largeur maximale pour la section (ajuste la valeur selon tes besoins) */
+}
+
+/* Styles pour les titres */
+h1 {
+    margin: 0; /* Supprime la marge par défaut autour des titres */
+    padding-bottom: 0.5rem; /* Ajoute un padding inférieur de 0.5rem sous les titres */
+}
+ h2 {
+    margin: 0; /* Supprime la marge par défaut autour des titres */
+    padding-bottom: 0.5rem; /* Ajoute un padding inférieur de 0.5rem sous les titres */
+    border-bottom: 2px solid #1abc9c; /* Ajoute une bordure inférieure de 2px sous les titres avec une couleur vert clair */
+}
+
+.section h1,
+.section h2,
+.section h3,
+.section h4,
+.section h5,
+.section h6 {
+    color: #333; /* Couleur des titres gris foncé */
+    margin-bottom: 1rem; /* Ajoute une marge inférieure pour les titres */
+}
+
+.section p {
+    line-height: 1.6; /* Définit l'espacement entre les lignes de texte */
+    margin-bottom: 1rem; /* Ajoute une marge inférieure pour les paragraphes */
+}
+
+.section::before {
+    content: ''; /* Crée un pseudo-élément vide pour l'image de fond */
+    position: absolute; /* Positionne le pseudo-élément en fonction de son parent */
+    top: 0; /* Positionne le pseudo-élément en haut de la section */
+    left: 0; /* Positionne le pseudo-élément à gauche de la section */
+    width: 100%; /* Le pseudo-élément couvre toute la largeur de la section */
+    height: 100%; /* Le pseudo-élément couvre toute la hauteur de la section */
+    opacity: 0.8; /* Rend l'image de fond semi-transparente avec une opacité de 50% */
+    z-index: -1; /* Positionne le pseudo-élément derrière le contenu de la section */
+    pointer-events: none; /* Assure que l'image de fond ne bloque pas les interactions avec le contenu */
+}
+
+
+
+.caroull {
+  display: flex;
+  overflow: hidden;
+  margin: 0 auto 2rem;
+  width: 250px;
+  height: 250px;
+border-radius: 10px;
+}
+
+
+.ecard {
+    
+  width: 100%;
+  height: 100%;
+  animation-duration: 20s;
+  animation-name: mescar;
+  animation-iteration-count: infinite ;
+   animation-timing-function: ease-in-out;
+}
+@keyframes mescar {
+    0%,
+    5% {
+        transform: translateX(0);
+    }
+    10%,
+    15% {
+        transform: translateX(-250px);
+    }
+    20%,
+    25% {
+        transform: translateX(-500px);
+    }
+    30%,
+    35%{
+        transform: translateX(-750px);
+    }
+    40%,
+    45% {
+        transform: translateX(-1000px);
+    }
+    50%,
+    55% {
+        transform: translateX(-1250px);
+    }
+    60%,
+    65% {
+        transform: translateX(-1500px);
+    }
+    70%,
+    75% {
+        transform: translateX(-1750px);
+    }
+    80%,
+    85% {
+        transform: translateX(-2000px);
+    }
+    90%,
+    95% {
+        transform: translateX(-2250px);
+    }
+    100% {
+        transform: translateX(-2500px);
+    }
+}
+
+.phtaffi {
+  width:250px;
+  height: 250px;
+ 
+}
+
+/*Banniere*/
+.ad-banner-blue {
+  background: linear-gradient(90deg, #0066cc, #33ccff); /* Nuances de bleu */
+  color: #fff;
+  padding: 20px;
+  margin: 30px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.ad-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ad-text {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.ad-subtext {
+  font-size: 14px;
+  margin: 5px 0 15px;
+}
+
+.ad-button {
+  background: #fff;
+  color: #0066cc; /* Texte bleu */
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.ad-button:hover {
+  background: #33ccff; /* Bleu clair au survol */
+  color: #fff;
+}
+
+
+
+.imgcard{
+    width: 100%; /* Définit la largeur de l'image pour qu'elle occupe toute la largeur de la carte */
+    height: auto; /* Ajuste automatiquement la hauteur de l'image en fonction de sa largeur pour maintenir les proportions */
+    border-bottom: 1px solid #ddd; /* Ajoute une bordure en bas de l'image pour la séparer visuellement du reste du contenu */
+    margin-bottom: 15px; /* Ajoute un espace en dessous de l'image pour séparer l'image du texte en dessous */
+}
+
+.product-container {
+    
+    margin: 20px auto;
+    padding: 2px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch; /* pour les appareils mobiles */
+    scroll-snap-type: x mandatory; /* pour un défilement fluide */
+}
+
+.ccontainer{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch; /* pour les appareils mobiles */
+    scroll-snap-type: x mandatory; /* pour un défilement fluide */
+}
+.bcard{
+    display: flex;
+    margin: 2px;
+
+}
+.ccard{
+    background-color: #fff;
+    border-radius: 5px;
+    width: 200px; /* La largeur des cartes reste la même */
+    height: 400px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    flex: 0 0 auto; /* pour éviter que les éléments ne soient compressés */
+}
+.product-image {
+    width: 100%; /* Définit la largeur de l'image pour qu'elle occupe toute la largeur de la carte */
+    height: 50%; /* Ajuste automatiquement la hauteur de l'image en fonction de sa largeur pour maintenir les proportions */
+    border-bottom: 1px solid #ddd; /* Ajoute une bordure en bas de l'image pour la séparer visuellement du reste du contenu */
+    margin-bottom: 15px; /* Ajoute un espace en dessous de l'image pour séparer l'image du texte en dessous */
+}
+.synb{
+    font-size: 150px; /* Augmente la taille du symbole */
+    font-weight: bold; /* Met le symbole en gras */
+    color: rgb(92,92,92); /* Change la couleur du symbole (facultatif) */
+    margin: 10px 0; /* Ajoute un peu d'espace autour du symbole */
+}
+.lcard {
+  text-decoration: none;
+}
+
+.lcard h3{
+    font-family: 'NewAmsterdam-Regular','DMSerifText-Regular','Roboto-Regular',Arial, sans-serif; /* Police neutre */
+}
+.lcard .bcard, .lcard .ccard {
+  text-decoration: none;
+}
+
+
+.cmcard{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch; /* pour les appareils mobiles */
+    scroll-snap-type: x mandatory; /* pour un défilement fluide */
+}
+
+.mcard{
+    background-color: #fff;
+    border-radius: 5px;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    margin: 3px;
+    padding: 8px;
+    text-align: center;
+}
+
+.mimg{
+    width: 100%;
+    height: 80%;
+    border-bottom: 1px solid #ddd; /* Ajoute une bordure en bas de l'image pour la séparer visuellement du reste du contenu */
+    margin-bottom: 15px; /* Ajoute un espace en dessous de l'image pour séparer l'image du texte en dessous */   
+}
+
+.external-link {
+    margin: 15px;
+     display: inline-block; /* Assure que le lien ait un comportement de bouton */
+    padding: 10px 20px; /* Ajoute du remplissage pour donner l'apparence d'un bouton */
+    font-size: 14px; /* Taille du texte pour les boutons PDF */
+    text-decoration: none; /* Supprime le soulignement du lien */
+    border-radius: 5px; /* Arrondit les coins du bouton */
+    border: none; /* Supprime les bordures */
+    cursor: pointer; /* Change le curseur pour indiquer un élément cliquable */
+    word-wrap: break-word; /* Gère les longs textes */
+    word-break: break-word; /* Coupe les mots si nécessaire */
+  background-color: #0056b2; /* Bleu plus foncé */
+  color: white; /* Couleur du texte en blanc */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.external-link:hover {
+    transform: scale(1.05); /* Agrandit légèrement la carte au survol */
+    transition: transform 0.3s ease;
+    color: #007bff; /* Bleu clair */
+    background-color: #CFCFCF; /* Couleur de fond du bouton (gris par exemple) */
+}
+
+.lien-info {
+  display: flex;
+  justify-content: space-between; /* Aligne les éléments horizontalement */
+  flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+}
+
+.lien-info a {
+  /* ... votre style pour les liens ... */
+}
+
+
+.social-icons {
+    display: flex; /* Affiche les icônes sur une seule ligne */
+    justify-content: center; /* Centre les icônes horizontalement */
+}
+.social-icon {
+    margin: 0 10px; /* Ajoute un espace entre les icônes */
+    color: #fff; /* Couleur des icônes */
+    font-size: 25px; /* Taille des icônes */
+    transition: color 0.3s ease; /* Transition pour le changement de couleur au survol */
+}
+
+.social-icon:hover {
+    color: rgb(114,165,168); /* Couleur des icônes au survol */
+}
+
+/* Styles généraux pour les boutons */
+.social-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 50%;
+  padding: 10px;
+  margin: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+}
+
+.social-button img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+
+/* Styles pour les liens vers des fichiers PDF */
+.pdf-link {
+    display: inline-block; /* Assure que le lien ait un comportement de bouton */
+    padding: 10px 20px; /* Ajoute du remplissage pour donner l'apparence d'un bouton */
+    font-size: 14px; /* Taille du texte pour les boutons PDF */
+    background-color: #4CAF50; /* Couleur de fond du bouton (vert par exemple) */
+    color: white; /* Couleur du texte en blanc */
+    text-decoration: none; /* Supprime le soulignement du lien */
+    border-radius: 5px; /* Arrondit les coins du bouton */
+    border: none; /* Supprime les bordures */
+    cursor: pointer; /* Change le curseur pour indiquer un élément cliquable */
+    word-wrap: break-word; /* Gère les longs textes */
+    word-break: break-word; /* Coupe les mots si nécessaire */
+}
+.polisecu {
+    color: white;
+    margin: 2px;
+    text-decoration: none;
+}
+
+.pdf-link:hover {
+    background-color: #45a049; /* Change la couleur du bouton au survol */
+}
+
+.pdf-icon {
+    width: 24px; /* Définit la largeur de l'icône PDF à 24px */
+    height: 24px; /* Définit la hauteur de l'icône PDF à 24px */
+    margin-right: 8px; /* Ajoute une marge droite de 8px entre l'icône et le texte du lien */
+}
+.btn, .btn1, .btn2, .btn3, .btn4, .btn5, .btn6 {
+    display: inline-block; /* Assure que le lien ait un comportement de bouton */
+    padding: 10px 20px; /* Ajoute du remplissage pour donner l'apparence d'un bouton */
+    font-size: 14px; /* Taille du texte pour les boutons PDF */
+    color: white; /* Couleur du texte en blanc */
+    text-decoration: none; /* Supprime le soulignement du lien */
+    border-radius: 5px; /* Arrondit les coins du bouton */
+    border: none; /* Supprime les bordures */
+    cursor: pointer; /* Change le curseur pour indiquer un élément cliquable */
+    word-wrap: break-word; /* Gère les longs textes */
+    word-break: break-word; /* Coupe les mots si nécessaire */
+}
+.bouton{
+    text-decoration: none; /* Supprime le soulignement du lien */
+    border-radius: 5px; /* Arrondit les coins du bouton */
+    border: none; /* Supprime les bordures */
+    cursor: pointer; /* Change le curseur pour indiquer un élément cliquable */
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn {
+     background-color: #4CAF50; /* Couleur de fond du bouton (vert par exemple) */
+}
+.btn:hover {
+    background-color: #45a049; /* Change la couleur du bouton au survol */
+}
+
+.btn1 {
+    background-color: rgb(40,108,164); /* Couleur de fond du bouton (vert par exemple) */
+}
+.btn1:hover {
+    background-color: rgb(16,44,67); /* Change la couleur du bouton au survol */
+}
+.btn2 {
+    background-color: rgb(189,196,64); /* Couleur de fond du bouton (vert par exemple) */
+}
+.btn2:hover {
+    background-color: rgb(68,70,21); /* Change la couleur du bouton au survol */
+}
+.btn3 {
+    background-color: rgb(221,11,48); /* Couleur de fond du bouton (vert par exemple) */
+}
+.btn3:hover {
+    background-color: rgb(134,6,29); /* Change la couleur du bouton au survol */
+}
+.btn4 {
+    background-color: rgb(206,129,77); /* Couleur de fond du bouton (vert par exemple) */
+}
+.btn4:hover {
+    background-color: rgb(96,53,26); /* Change la couleur du bouton au survol */
+}
+.btn5 {
+    background-color: rgb(153,217,234); /* Couleur de fond du bouton (vert par exemple) */
+}
+.btn5:hover {
+    background-color: rgb(29,119,141); /* Change la couleur du bouton au survol */
+}
+.btn6{
+    font-family: 'Matemasie-Regular','MilestoneBrush','Roboto-Regular',Arial, sans-serif; /* Police neutre */
+    color: black;
+    background-color: rgb(234,234,234);
+}
+.btn6:hover {
+    color: white;
+    background-color: black;
+}
+
+.bouton:hover {
+    background-color: #3e8e41;
+}
+
+@media all and (max-width: 1024px) {
+    
+      header h1 {
+        font-size: 40px; /* Ajuste la taille du texte pour les tablettes et petits écrans */
+    }
+
+    nav ul {
+        flex-direction: column; /* Transforme la navigation en une colonne */
+    }
+
+.ccard p {
+        font-size: 16px; /* Ajuste la taille du texte pour mobile */
+        margin: 1px;
+    }
+
+
+
+    .card {
+        width: 80%; /* Les cartes prennent plus de place sur les tablettes */
+    }
+    
+    .bcard{
+        scroll-snap-align: center; /* pour centrer les éléments */
+    }
+
+    .social-button {
+    padding: 8px;
+  }
+
+  .social-button img {
+    width: 35px;
+    height: 35px;
+  }
+
+    .scroll-button {
+        width: 60px;
+        height: 60px;
+        font-size: 30px; /* Ajuste la taille des boutons de défilement pour les tablettes */
+    }
+
+    footer {
+        font-size: 14px; /* Ajuste légèrement la taille du texte du pied de page */
+    }
+    /*Reduire la taille des boutrons en savoir plus*/
+    .c2 a{font-size: 15px; /* Taille des icônes */}
+.c1 a{font-size: 15px; /* Taille des icônes */}
+    .c11, .c21 {
+        display: none;
+    }
+}
+
+
+/* Conteneur des boutons */
+.social-buttons-container {
+    display: flex;
+    gap: 16px;  /* Espacement entre les boutons */
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Style général pour chaque bouton social */
+.social-btn {
+    display: flex;
+  align-items: center;
+  justify-content: center;
+    width: 40px;  /* Taille des boutons */
+    height: 40px; /* Taille des boutons */
+    border-radius: 50%;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    text-decoration: none;
+    flex-wrap: wrap;
+}
+
+/* Styles spécifiques pour chaque plateforme */
+.whatsapp-button {
+    background-color: #25d366;
+}
+
+.whatsapp-button:hover {
+    background-color: #128c7e;
+    transform: scale(1.1);
+}
+
+.facebook-button {
+    background-color: #1877f2;
+}
+
+.facebook-button:hover {
+    background-color: #155db8;
+    transform: scale(1.1);
+}
+
+.twitter-button {
+    background-color: #ffffff;
+}
+
+.twitter-button:hover {
+    background-color: #0d8ecf;
+    transform: scale(1.1);
+}
+
+.instagram-button {
+    background-color: #e4405f;
+}
+
+.instagram-button:hover {
+    background-color: #d73450;
+    transform: scale(1.1);
+}
+
+.tiktok-button {
+    background-color: #ffffff;
+}
+
+.tiktok-button:hover {
+    background-color: rgb(162, 162, 162);
+    transform: scale(1.1);
+}
+
+/* Style des images dans les boutons */
+.social-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Snapchat */
+.snapchat-button {
+    background-color: #fffc00;
+}
+
+.snapchat-button:hover {
+    background-color: #f0e100;
+    transform: scale(1.1);
+}
+
+/*Message Blocage Watsapp*/
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: 10000;
+  text-align: center;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  margin: 100px auto;
+  max-width: 90%;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.btn-whatsapp {
+  display: inline-block;
+  background: green;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  margin-top: 15px;
+}
